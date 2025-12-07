@@ -1,13 +1,21 @@
 import {createRoot} from 'react-dom/client'
 
-/*createRoot(document.getElementById('root')).render(
-  <h1>Hello Charles wong!</h1>
-)*/
+const fruitlist=['apple','banana','cherry'];
 
-const myelement=(
-  <p>Welcome to my world!</p>
-)
+function App(){
+  return(
+    <ul>
+      {fruitlist.map((fruit, index ,array) =>{
+        return(
+          <li key={fruit}>
+            Number:{fruit},Index:{index}, Array:{array}
+          </li>
+        );
+      }) }
+    </ul>
+  );
+}
 
-createRoot (document.getElementById('demo')).render(
-  myelement
+createRoot(document.getElementById('root')).render(
+  <App />
 )
