@@ -17,3 +17,67 @@
 ## Your First React App
 [Your First React App](https://www.w3schools.com/react/react_first_app.asp)
 
+## React Render HTML
+[React Render HTML](https://www.w3schools.com/react/react_render.asp)
+
+React's goal is in many ways to render HTML in a web page.
+React renders HTML to the web page via a container, and a function called ```createRoot()```
+
+## The Container
+Typically, this container is a ```<div id="root"></div>``` element in the ```index.html``` file.
+
+## The createRoot Function
+The ```createRoot``` function is located in the main.jsx file in the ```src``` folder, and is a 
+built-in function that is used to create a root node for a React application.
+
+```
+main.jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+      <App />
+    </StrictMode>
+  )  
+
+```
+The createRoot()function takes one argument, an HTML element.
+THe purpose of the function is do define the HTML element where a React component should be displayed.
+
+## The render Method
+
+The ```render``` method defines what to render in the HTML container
+
+The result is displayed in the <div id="root"> element.
+
+![alt text](image.png)
+
+Note: the element id does not have to be "root ", but this is the standard convention.
+
+## The HTML Code
+[The HTML Code](https://www.w3schools.com/react/react_render.asp)
+## The Root Node
+The root node is the HTML element where you want to display the result.
+It is like a container for content, managed by React.
+It does NOT have to be a ```<div>``` element and it does NOT have to have the ```id="root" ```:
+
+## Upgrade React
+[Upgrade React](https://www.w3schools.com/react/react_upgrade.asp)
+
+## React ES6
+[React ES6](https://www.w3schools.com/react/react_es6.asp)
+
+## What should i Learn Es6
+- Classes
+- Arrow Functions
+- Variables(let,const,var)
+- Array Methods like .map()
+- Destructuring
+- Modules
+- Ternary Operator
+- Spread Operator
+## React ES6 Classes
+A class  is a type
