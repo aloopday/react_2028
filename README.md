@@ -79,7 +79,7 @@ It does NOT have to be a ```<div>``` element and it does NOT have to have the ``
 - Modules
 - Ternary Operator
 - Spread Operator
-## React ES6 Classes
+## React ES6 Classe
 A class  is  a type of function, but instead of using the keyword ```function``` to initiate it,
 we use the keyword ```class```, and the properties are assigned inside a constructor() method.
 
@@ -87,3 +87,8 @@ we use the keyword ```class```, and the properties are assigned inside a constru
 
 ## Method in Classes
 You can add your own methods in a class:
+the object's method name followed by parentheses(parameters would og inside the parentheses).
+## Class Inheritance
+ TO  create a class inheritance, use the ```extends ``` keyword.
+ A class created with a class inheritance inherits all the methods
+ from another class:
