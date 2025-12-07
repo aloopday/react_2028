@@ -80,4 +80,10 @@ It does NOT have to be a ```<div>``` element and it does NOT have to have the ``
 - Ternary Operator
 - Spread Operator
 ## React ES6 Classes
-A class  is a type
+A class  is  a type of function, but instead of using the keyword ```function``` to initiate it,
+we use the keyword ```class```, and the properties are assigned inside a constructor() method.
+
+## Note constructor function is called automatically when the object is initialized.
+
+## Method in Classes
+You can add your own methods in a class:
