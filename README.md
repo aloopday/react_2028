@@ -92,3 +92,11 @@ the object's method name followed by parentheses(parameters would og inside the 
  TO  create a class inheritance, use the ```extends ``` keyword.
  A class created with a class inheritance inherits all the methods
  from another class:
+![alt text](image-1.png)
+
+## The super() method refers to the parents class.
+By calling the ```super()``` method in the constructor method,
+we call the parent's constructor method and get access to 
+the parent's properties and methods.
+## Arrow Functions 
+Arrow functions allow us to write shorter function syntax:
