@@ -100,3 +100,14 @@ we call the parent's constructor method and get access to
 the parent's properties and methods.
 ## Arrow Functions 
 Arrow functions allow us to write shorter function syntax:
+
+## What about this?
+In short, with arrow functions there is no binding of ```this```
+
+**Notice** In regular functions the ```this``` keyword represented the 
+object that  called the function, which could be the window, the 
+document, a button or whatever.
+
+With arrow functions, the ```this ``` keyword always represents the object 
+tht defined the arrow function.
+

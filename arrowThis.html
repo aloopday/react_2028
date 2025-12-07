@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h1>Arrow Function</h1>
+        <p>The <strong>this</strong>keyword represents the Header object.</p>
+        <button id="btn">Click me!</button>
+        <p><Strong>this</Strong></p>
+        <p id="demo"></p>
+        <script>
+            class Header{
+                constructor(){
+                    this.color="Red";
+                }
+                changeColor=()=>{
+                    document.getElementById("demo").innerHTML +=this;
+                }
+            }
+
+            const myheader= new Header();
+
+            //The window object calls the function:
+            window.addEventListener("load",myheader.changeColor);
+            //A button object calls the function:
+            document.getElementById("btn").addEventListener("click",myheader.changeColor);
+        </script>
+    </body>
+</html>
