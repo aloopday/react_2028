@@ -1,12 +1,18 @@
 
-import { createRoot } from 'react-dom/client';
+import React, { useState } from 'react';    
+import {createRoot, } from 'react-dom/client'
 
-function Greeting({ name, age }) {
-  return <h1>Hello, {name}! You are {age} years old.</h1>;
-}  // ← This closing brace was missing!
+function Counter(){
+  //Destructuring the array returned by useState
+  const [count,setCount] =useState(0);
+  return(
+    <button onClick={ () => setCount(count +1)}>
+      Count:{count}
+    </button>
+  );
+}
 
 createRoot(document.getElementById('root')).render(
-  <Greeting name="Charles" age={39} />
-); // ← Added missing semicolon
-// Remove the lone "export" at the end
-export default Greeting;
+  <Counter />
+);
+export default Counter
