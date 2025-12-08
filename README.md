@@ -211,3 +211,11 @@ Destructuring comes in handy when a function returns an array.
 You can use destructing to  extract the values from an object.
 
 **For objects**, the order of the properties does not matter:
+
+## Destructuring in React Components
+Destructuring is particularly useful in React
+for working with props, hooks, and API responses.
+It help make your code more concise and easier to read.
+
+## Props Destructuring
+When a component receives props, you can use destructuring to  extract the values you need.
