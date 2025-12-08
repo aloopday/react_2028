@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            const person={
+                firstName:"John",
+                lastName:"Wang",
+                age:56,
+                car:{
+                    brand:"tesla",
+                    model:"model 3"
+                }
+            };
+
+            //Destructuring
+            let {firstName,car:{brand,model}}=person;
+
+            //Access the ariables;
+            let message=`His name is ${firstName} and he drives a ${brand} ${model}.`;
+            document.getElementById("demo").innerHTML=message;
+        </script>
+    </body>
+</html>
