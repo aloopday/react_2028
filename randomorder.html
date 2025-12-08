@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <p id="demo"></p>
+        <script>
+            const person={
+                firstName:"Alex",
+                lastName:"Wang",
+                age:39,
+            };
+
+            //Destructuring
+            let {lastName, age, firstName}=person;
+            //You can access each variable separately:
+            document.getElementById("demo").innerHTML=firstName;
+        </script>
+    </body>
+</html>

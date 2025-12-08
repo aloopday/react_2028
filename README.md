@@ -209,3 +209,5 @@ Destructuring comes in handy when a function returns an array.
 ## Destructuring Objects
 [Destructuring Objects](https://www.w3schools.com/react/react_es6_destructuring.asp)
 You can use destructing to  extract the values from an object.
+
+**For objects**, the order of the properties does not matter:
