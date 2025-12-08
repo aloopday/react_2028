@@ -111,3 +111,101 @@ document, a button or whatever.
 With arrow functions, the ```this ``` keyword always represents the object 
 tht defined the arrow function.
 
+## Remember these differences when you are working with functions.
+
+Sometimes the behavior of regular functions is what you wants,
+if not, use arrow functions.
+
+## React ES6 Variables
+
+```
+var x =5.6
+```
+
+Notice:```var``` has a function scope, not a block scope.
+- If you use ```var``` outside of a function, it belongs to the global scope.
+- If you use ```var``` inside of a function, it belongs to that function.
+- If you use ```var``` inside of a block, i.e. a for loop, the variable is still
+available outside of that block.
+
+```
+let x=5.6
+```
+
+```let``` is the block  scoped version of ```var```, and is limited to the block
+(or expression ) where it is defined .
+If you use ```let ``` inside of a block, i.e. a for loop, the variable is only
+available inside of that loop.
+```
+let has  a block scop.
+```
+
+```const``` is a variable that once it has been created, its value can never change.
+```
+const has a block scope.
+```
+The keyword ```const``` is a bit misleading.
+It does not define a constant value. It defines a ```constant reference``` to a value.
+
+Because of this you can NOT:
+- Reassign a constant value
+- Reassign a constant array
+- Reassign a constant object
+
+But you CAN:
+- Change the elements of constant array
+- Change the properties of constant object.
+
+## JavaScript Array map()
+[JavaScript Array Map](https://www.w3schools.com/react/react_es6_array_map.asp)
+
+The map() Method
+THe map() method creates a new array with the results of calling a function for every array  element.
+
+
+## map() in React
+The map() method is commonly used in React to render lists of elements:
+
+Note:When using map() in React to create list items, 
+each item needs a unique ```key`` prop.
+
+## map() with Objects
+You can also map() with arrays of objects:
+
+## map() Parameters
+[map() Parameter](https://www.w3schools.com/react/react_es6_array_map.asp)
+
+The map() method takes three parameters:
+    - currentValue -The current element being processed
+    - index -The index of the current  element (optional)
+    - array -The array that map was called upon(optional)
+
+## Note:
+The map() method always returns a new array. It does not 
+modify the original array.
+
+## React ES6 Destructuring
+[React destructuring](https://www.w3schools.com/react/react_es6_destructuring.asp)
+
+Destructing is a JavaScript feature that allows you to extract values from objects
+or arrays into distinct variables.In React,it's commonly used with **props**, **hooks**, and 
+state management.
+
+Note:Destructuring makes React code cleaner and more readable by reducing repetitive object
+and array access.
+
+## Destructing Arrays
+**Notice**  When destructuring arrays, the order that variables are declared is important.
+
+If we only want the car and suv we can simply leave out the truck but keep the comma:
+```
+const vehicles=['Tesla','BMW','Benz'];
+const [car,,suv]=vehicles;
+
+```
+
+Destructuring comes in handy when a function returns an array.
+
+## Destructuring Objects
+[Destructuring Objects](https://www.w3schools.com/react/react_es6_destructuring.asp)
+You can use destructing to  extract the values from an object.
