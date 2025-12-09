@@ -259,3 +259,12 @@ YOu can import modules into a file in two ways, based on if they are named **exp
 or **default exports**.
 
 **Named exports** must be **destructured**using **curly braces**. ***Default exports do not*** .
+
+## React ES6 Ternary Operator
+[React ES6](https://www.w3schools.com/react/react_es6_ternary.asp)
+
+The ternary operator is a simplified conditional operator like  ```if /else.```
+Syntax: ``` condition ? <expression if true> :<expression if false> ```
+
+Here is an example using ```if/else```
+
