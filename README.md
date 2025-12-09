@@ -219,3 +219,15 @@ It help make your code more concise and easier to read.
 
 ## Props Destructuring
 When a component receives props, you can use destructuring to  extract the values you need.
+## useState Hook Destructuring
+When a component uses the useState hook, we use destructuring to extract the values from it.
+
+## React ES6 Spread Operator
+[Spread Operator](https://www.w3schools.com/react/react_es6_spread.asp)
+## Spread Operator
+The JavaScript spread operator(...) allows us to quickly copy all or part of 
+an existing array or object into another array or object.
+
+The spread operator is often used in combination with destructuring.
+
+Assign the first and second items from ```numbers``` to variables and put the rest in an array:
