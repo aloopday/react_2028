@@ -231,3 +231,31 @@ an existing array or object into another array or object.
 The spread operator is often used in combination with destructuring.
 
 Assign the first and second items from ```numbers``` to variables and put the rest in an array:
+
+## React ES6 Modules
+[React ES6](https://www.w3schools.com/react/react_es6_modules.asp)
+
+## Modules
+JavaScript modules allow you to break up your code into separate files.
+
+This makes it easier to maintain the code-base.
+ES Modules rely on the ```import``` and ```export``` statements.
+
+## Export 
+You can export a function or variable from any file.
+Let us create a file named ```person.js``` and  fill it with the 
+things we want to export.
+There are two types of exports:Named and Default.
+## Named Exports
+
+You can create named exports two ways:
+
+## Default Exports
+
+Notice: You can **only have one default export** in a file.
+
+## Import 
+YOu can import modules into a file in two ways, based on if they are named **exports**
+or **default exports**.
+
+**Named exports** must be **destructured**using **curly braces**. ***Default exports do not*** .
