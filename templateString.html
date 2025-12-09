@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+    </head>
+    <body>
+        <h1>Example</h1>
+        <p>With template strings, the indentations is part of 
+            the string.
+        </p>
+        <p>This is note visible for most HTML elements,but
+            the PRE element preservers any spaces and new lines:
+        </p>
+        <pre id="demo"></pre>
+        <script>
+            const x =`
+                Charles:
+                   Hi, how are you?
+                Alex:
+                   Not bad, thanks!
+            
+            `;
+        document.getElementById("demo").innerHTML=x;
+        </script>
+    </body>
+</html>

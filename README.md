@@ -268,3 +268,17 @@ Syntax: ``` condition ? <expression if true> :<expression if false> ```
 
 Here is an example using ```if/else```
 
+## React ES6 Template Strings
+[template String](https://www.w3schools.com/react/react_es6_template_strings.asp)
+
+## Template Strings
+
+Template strings allow you to write strings that **span multiple lines and include embedded expressions**.
+
+
+Template strings use backticks (`) instead of quotes and can include:
+- Multiple lines without  \n
+- Expressions inside ${}
+- Quotes without escaping
+
+**NOte**:The indentation in multi-line strings becomes part of the string.
