@@ -292,3 +292,5 @@ You can also use template strings with a function (called a tag) to modify the o
 them in most cases.
 The function takes the text and the  expression(s) as arguments.
 
+![alt text](image-2.png)
+
