@@ -10,8 +10,8 @@
 
         <script>
             const items =["apple","banana","orange"];
-            const list=`You have ${items.length} items: 
-            ${items.map(item=>`- ${item}`).join('\n')}`;
+            const list=`You have ${items.length} items: <br>
+            ${items.map(item=>`- ${item}`).join(`<br>`)}`;
 
             document.getElementById("demo").innerHTML=list;
         </script>

@@ -282,3 +282,5 @@ Template strings use backticks (`) instead of quotes and can include:
 - Quotes without escaping
 
 **NOte**:The indentation in multi-line strings becomes part of the string.
+
+## HTML can eat \n
