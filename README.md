@@ -284,3 +284,11 @@ Template strings use backticks (`) instead of quotes and can include:
 **NOte**:The indentation in multi-line strings becomes part of the string.
 
 ## HTML can eat \n
+
+## Tagged Templates
+
+You can also use template strings with a function (called a tag) to modify the output.
+**Note** Tagged templates are an advanced feature. You might ont need 
+them in most cases.
+The function takes the text and the  expression(s) as arguments.
+
