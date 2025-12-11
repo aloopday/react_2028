@@ -1,18 +1,13 @@
+import {createRoot } from 'react-dom/client'
+const myElement =(
 
-import React, { useState } from 'react';    
-import {createRoot, } from 'react-dom/client'
-
-function Counter(){
-  //Destructuring the array returned by useState
-  const [count,setCount] =useState(0);
-  return(
-    <button onClick={ () => setCount(count +1)}>
-      Count:{count}
-    </button>
-  );
-}
+    <ul>
+        <li>Alex</li>
+        <li>Olivia</li>
+        <li>Isabella</li>
+    </ul>
+);
 
 createRoot(document.getElementById('root')).render(
-  <Counter />
+    myElement
 );
-export default Counter
