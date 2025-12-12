@@ -1,16 +1,11 @@
 import {createRoot} from 'react-dom/client'
-
-function kwtohp(kw){
-    return kw * 1.36;
-}
+//Check out the index.html file, were we have added 
 
 function Car(){
     return(
-        <>
-        <h1>My car</h1>
-        <p>It has {kwtohp(218)} horsepower</p>
-        
-        </>
+        <h1 className="myclass">
+            Hello World
+        </h1>
     );
 }
 
