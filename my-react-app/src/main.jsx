@@ -1,14 +1,19 @@
-import{createRoot} from 'react-dom/client'
+import {createRoot} from 'react-dom/client'
+
+function kwtohp(kw){
+    return kw * 1.36;
+}
 
 function Car(){
-    const hp=218 *1.36;
     return(
         <>
         <h1>My car</h1>
-        <p>It has {hp} horsepower</p>
+        <p>It has {kwtohp(218)} horsepower</p>
+        
         </>
     );
 }
+
 createRoot(document.getElementById('root')).render(
     <Car />
-)
+);
