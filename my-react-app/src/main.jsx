@@ -1,13 +1,18 @@
 import {createRoot} from 'react-dom/client'
-//Check out the index.html file, were we have added 
 
 function Car(){
-    const x ="myclass";
+    const mystyles ={
+        color:"blue",
+        fontSize:"20px",
+        backgroundColor:"lightyellow",
+    };
+
     return(
         <>
-        <h1 className={x}>Hello Charles!</h1>
+
+        <h1 style={mystyles}>My car</h1>
         </>
-    )
+    );
 }
 
 createRoot(document.getElementById('root')).render(
