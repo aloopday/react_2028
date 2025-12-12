@@ -294,3 +294,332 @@ The function takes the text and the  expression(s) as arguments.
 
 ![alt text](image-2.png)
 
+## React JSX
+[React JSX](https://www.w3schools.com/react/react_jsx.asp)
+
+What is JSX?
+JSX stands for JavaScript XML.
+JSX allows us to write HTML in React.
+JSX makes it easier to write and add HTML in React.
+
+## Coding JSX
+
+JSX allows us to write HTML elements in JavaScript and place them in
+the DOM without any createElement() and /or appendChild() methods.
+
+JSX converts HTML tags into react elements.
+
+Note:
+```
+You are not required to use JSX, but JSX makes it easier to write React 
+applications.
+```
+
+非常好的問題！在現代 React 專案（尤其是用 Vite 或 Create React App）裡，你一定會看到這兩個檔案：
+
+```
+src/
+  ├── main.jsx     ← 啟動檔案（入口）
+  └── App.jsx      ← 你的主要畫面（根組件）
+```
+
+它們的角色完全不一樣，簡單用「人體比喻」來說：
+
+| 檔案         | 比喻              | 責任（做什麼事）                                                                 | 可不可以刪？ |
+|---------------|-------------------|----------------------------------------------------------------------------------|--------------|
+| `main.jsx`    | 身體 + 心臟       | 把 React 「啟動」、把 `<App />` 掛到 HTML 的 `<div id="root">` 上                  | 不行！刪了整個網站不會動 |
+| `App.jsx`     | 你真正的臉＋衣服   | 放你的所有畫面、路由、佈局（navbar、footer、全站內容）                              | 可以改名，但一定要有一個根組件 |
+
+### 詳細內容對比（用 Vite 專案為例）
+
+#### `main.jsx`（或 main.js）
+```jsx
+// src/main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+```
+
+它只做三件事：
+1. 匯入 `App` 組件
+2. 找到 HTML 裡的 `<div id="root"></div>`
+3. 把 `<App />` 塞進去，啟動整個 React 應用
+
+→ 這個檔案幾乎永遠不用動，99% 的專案長這樣就夠了。
+
+#### `App.jsx`
+```jsx
+// src/App.jsx
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello 世界！</h1>
+      <p>這裡是你全部畫面的起點</p>
+      {/* 路由、導覽列、頁面內容都在這邊寫 */}
+    </div>
+  )
+}
+
+export default App
+```
+
+它是你的「根組件（Root Component），所有畫面都從這裡開始：
+- 放 `<BrowserRouter>`（如果有路由）
+- 放全站共用的 `<Navbar />`、`<Footer />`
+- 顯示當前頁面
+
+### 實際專案常見結構
+
+```
+src/
+├── main.jsx              ← 啟動程式（永遠差不多）
+├── App.jsx              ← 根組件（放路由、全站佈局）
+├── routes/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   └── Dashboard.jsx
+├── components/
+│   ├── Navbar.jsx
+│   └── Footer.jsx
+└── assets/
+    └── logo.svg
+```
+
+這時候 `App.jsx` 通常會長這樣：
+```jsx
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './routes/Home'
+import About from './routes/About'
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </>
+  )
+}
+```
+
+### 總結表（背起來就對了！）
+
+| 問題                     | main.jsx 還是 App.jsx？ | 答案           | 原因                                                                 |
+|--------------------------|--------------------------|----------------------------------------------------------------------|
+| 哪個是 React 啟動點？     | main.jsx                | 它呼叫 ReactDOM.render / createRoot                                          |
+| 哪個放畫面、路由、Navbar？| App.jsx                 | 這是你真正寫網頁內容的地方                                                  |
+| 哪個可以改名？            | App.jsx                 | 可以改成 Layout.jsx、Root.jsx 都行，只要 main.jsx 匯入對就好了                |
+| 哪個絕對不能刪？        | main.jsx                | 刪了整個 React 不會跑                                                        |
+| 哪個通常會很大？          | App.jsx                 | 因為放全站結構                                                               |
+
+一句話記住：
+
+> `main.jsx` 是「啟動器」  
+> `App.jsx` 是「你的網站內容」
+
+把這兩個角色分清楚，以後看到任何 React 專案都不會迷失了！
+
+JSX is an extension of the JavaScript language based on ES6, and 
+is translated into regular JavaScript at runtime.
+
+## Expression in JSX
+With JSX you can write expressions inside curly braces {}.
+The expression can be a React variable, or property, or any other valid JavaScript 
+expression. JSX will execute the expressioin.JSX will execute the expression
+and return the result:
+
+## inserting a Large Block of HTML
+To write HTML on Multiple lines, pur the HTML inside parentheses.
+
+## One Top Level Element
+[one Top Level Element](https://www.w3schools.com/react/react_jsx.asp)
+
+The HTML code must be wrapped in ONE top level element.
+So if you like to write two paragraphs, you must put them inside a parent element,
+like a  ```<div>```
+
+**Notice**: JSX will  throw an error if the HTML is not correct, or if the HTML misses a parent element.
+
+Alternatively,you can use a **"fragment"** to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM.\
+
+A fragment looks like an empty HTML tag: <></>
+
+## Elements Must be Closed
+[Elements Must be Closed](https://www.w3schools.com/react/react_jsx.asp)
+
+JSX follows XML rules, and therefore HTML elements must be properly closed.
+
+JSX will throw an error if the HTML is not properly closed.
+
+## Attribute class =className
+The  ```class``` attribute is a much used attribute in HTML, but since JSX is rendered as 
+JavaScript, and the ```class``` keyword is a reserved word in JavaScript, you are not
+allowed to use it in JSX.
+
+```
+Use attribute className instead.
+
+```
+remember class =className
+
+JSX solved this by using ```className``` instead. When JSX is rendered, it translates 
+```className``` attributes into ```class``` attributes.
+
+
+在 HTML 中，**`class` 属性**（class attribute）是最常用、最重要的属性之一，它的主要作用是**给 HTML 元素添加一个或多个分类标签（类名）**，方便用 CSS 和 JavaScript 来选中并操作这些元素。
+
+### class 属性的基本用法
+```html
+<p class="important">这是一段重要文字</p>
+<div class="card highlight big">这是一个卡片</div>
+<span class="btn primary large">按钮</span>
+```
+
+### class 的主要用途
+
+1. **用于 CSS 样式（最常见）**
+   ```css
+   /* 选中 class 为 important 的所有元素 */
+   .important {
+       color: red;
+       font-weight: bold;
+   }
+
+   /* 同时有 card 和 highlight 类的元素 */
+   .card.highlight {
+       background: yellow;
+   }
+
+   /* 选中 class 包含 btn 的元素 */
+   .btn {
+       padding: 10px 20px;
+       border: none;
+       cursor: pointer;
+   }
+   ```
+
+2. **用于 JavaScript 操作元素**
+   ```javascript
+   // 获取所有 class 为 item 的元素
+   document.querySelectorAll('.item');
+
+   // 获取第一个 class 包含 btn 的元素
+   document.querySelector('.btn');
+
+   // 添加或移除 class
+   element.classList.add('active');
+   element.classList.remove('disabled');
+   element.classList.toggle('hidden');
+   ```
+
+3. **一个元素可以有多个 class（用空格分隔）**
+   ```html
+   <div class="user-card vip online">张三</div>
+   ```
+   这个 div 同时具有三个类：`user-card`、`vip`、`online`，可以被这三个类分别或组合选中。
+
+4. **常用于前端框架和组件库**
+   - Bootstrap：`<button class="btn btn-primary">`
+   - Tailwind CSS：`<div class="bg-blue-500 text-white p-4 rounded">`
+   - Vue/React 中动态绑定 class：
+     ```vue
+     <div :class="{ active: isActive, 'text-red': hasError }">动态 class</div>
+     ```
+
+### class 和 id 的区别（重点！）
+
+| 属性  | class                  | id                     |
+|-------|------------------------|------------------------|
+| 可重复 | 可以给多个元素用同一个 class   | 页面内必须唯一（理论上）     |
+| 选择器  | .classname             | #idname                |
+| 用途    | 样式复用、批量操作           | 唯一标识（如锚点、JS 选中特定元素） |
+| 优先级  | 比标签选择器高，但比 id 低     | CSS 优先级最高             |
+
+### 总结一句话：
+**`class` 属性就是给 HTML 元素打“标签”，让 CSS 和 JavaScript 能够通过这些标签快速找到并美化或操作对应的元素，是前端开发中最核心的钩子（hook）之一。**
+
+几乎所有现代网页开发都离不开大量使用 class，没有 class，CSS 和 JS 就几乎无法精准控制页面了。
+
+## Comments in JSX
+
+Comments in JSX are written with {/* */}
+
+## JSX in React  Components
+React uses components to build UIs. Components are independent and reusable bits of 
+code.
+
+React components are like JavaScript functions, and return HTML.
+JSX works perfect inside React components.
+
+## React JSX Expressions
+[React JSX Expressions](https://www.w3schools.com/react/react_jsx_expressions.asp)
+
+One of the most  powerful features of JSX is the ability to embed JavaScript  expressions directly within your markup.
+
+React will **evaluate the expression** and render the result in the DOM.
+## Variables
+[variables](https://www.w3schools.com/react/react_jsx_expressions.asp)
+Variables are also valid expressions. Insert variables in JSX by wrapping it in curly  braces {}.
+
+## Function Calls 
+Function calls are valid expressions.Insert function calls in JSX by wrapping it in curly braces{}
+
+## Object Properties
+Access object properties within JSX:
+## React JSX Attributes
+[React JSX Attributes](https://www.w3schools.com/react/react_jsx_attributes.asp)
+JSX allows you to insert attributes into HTML elements, but there are a few important 
+differences.
+
+## class=className
+The ```class``` attribute is a much used attribute in HTML, but since JSX is rendered as 
+JavaScript , and the ```class``` keyword is a reserved word
+in JavaScript, you are not allowed to use it in JSX.
+
+JSX solved this by using ```className``` instead.
+When JSX is rendered, it translates ```className``` attributes into 
+```class``` attributes.
+
+## Expressions as Attributes
+[Expressions as Attributes](https://www.w3schools.com/react/react_jsx_attributes.asp)
+
+You can also use JavaScript expressions as attribute values.
+This is very useful for dynamic attributes.
+
+![alt text](image-3.png)
+
+Note that the attribute values is not wrapped in quotes, this is 
+important when using expressions (JavaScript variables) as 
+attribute values. If you use quotes, JSX will treat it as a 
+string literals and not a JavaScript expression.
+
+camelCase Event attributes
+Event attributes in JSX are written in camelCase.
+
+## Boolean Attributes 
+
+[Boolean Attributes](https://www.w3schools.com/react/react_jsx_attributes.asp)
+
+If you pass no value for an attribute, JSX treats it as true. To pass false, you must specify
+it as an expression.
+
+## The style Attribute
+The style attribute in JSX only accepts a JavaScript object with
+camelCased CSS  property names, rather than a CSS string(as in HTML).
+
+## Notice two things about the example above.
+1- The styles are stored in an object.
+2- Style properties are written in camelCase, e.g. ```fontSize```, instead of ```font-size```
+
+This is an important difference between HTML and JSX.
+You will learn more about CSS and styling in 
