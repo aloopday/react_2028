@@ -1,11 +1,11 @@
-import {createRoot } from 'react-dom/client'
-const myElement =(
+import {createRoot} from 'react-dom/client'
 
-    <ul>
-        <li>Alex</li>
-        <li>Olivia</li>
-        <li>Isabella</li>
-    </ul>
+const myElement=(
+    <>
+    <p>THis is a charles website</p>
+    <p>This is a parents communication platform.</p>
+    
+    </>
 );
 
 createRoot(document.getElementById('root')).render(
