@@ -623,3 +623,59 @@ camelCased CSS  property names, rather than a CSS string(as in HTML).
 
 This is an important difference between HTML and JSX.
 You will learn more about CSS and styling in 
+
+## React JSX If Statements
+[React JSX](https://www.w3schools.com/react/react_jsx_if_statements.asp)
+
+## Conditions-if statements
+React supports ```if``` statements, but not inside JSX
+
+To be able to use conditional statements in JSX, you should put the ```if```
+statements outside of the JSX,or use a ternary expression instead:
+
+Option1:
+Write ```if```statements outside of the JSX code:
+Option2: Use ternary expressions instead:
+
+***Note*** that in order to embed a JavaScript expression inside JSX, the 
+JavaScript must be wrapped with curly braces,{}.
+## React Components
+[React Components](https://www.w3schools.com/react/react_components.asp)
+
+Components are like functions that return HTML elements.
+
+## React Components
+Components are independent and reusable bits of code. They serve the same purpose as 
+JavaScript functions, but work in isolation and return HTML.
+
+Components come in two types, Class components and function
+components, in this tutorial we will concentrate on Function 
+components.
+
+## Create Your First Component
+When creating a React component, the component's name Must start with 
+and upper case letter.
+React components returns HTML code.
+
+Create a Function component called ```Car```
+```
+function Car(){
+  return(
+    <h2>Hi, I am a Car!</h2>
+  );
+}
+```
+## Rendering a Component
+Now your React application has a component called ```Car```, which returns an <h2> element.
+To use this component in your application , refer to it like this : <Car />
+
+## Props =properties.
+Arguments can be passed into a component as ```props```, which stands for properties.
+You send the arguments into the component as HTML attributes.
+You will learn more about ```Props``` in our
+
+## Components in Components
+We can refer to components inside other components:
+
+## Rendering a Component Twice
+We can render a component multiple times:

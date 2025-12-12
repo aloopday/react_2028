@@ -15,6 +15,8 @@ function Garage(){
         <Owner />
         <h1>Who lives in my Garage?</h1>
         <Car />
+        <Car />
+        <Owner />
         </>
     );
 }
