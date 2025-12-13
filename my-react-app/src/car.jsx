@@ -1,8 +1,10 @@
-function Car(){
-    return(
-        <h2>Hi, This is a Tesla Car!</h2>
-    );
+import React from 'react';
+
+class Car extends React.Component{
+
+render(){
+    return <h2>Hi, I am a Car! You can buy me.</h2>
+}
 }
 
-
-export default Car
+export default Car;
