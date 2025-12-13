@@ -679,3 +679,74 @@ We can refer to components inside other components:
 
 ## Rendering a Component Twice
 We can render a component multiple times:
+
+## Components in Files
+[components in Files](https://www.w3schools.com/react/react_components.asp)
+React is all about re-using code, and it can be a good idea to split
+your components into separate files.
+To do that, crate a new file in the ```src``` folder with a ```.jsx`` file extension and 
+put the code inside it:
+
+```
+Note that the filename must start with an uppercase character.
+```
+To be able to use the ```Car``` component,you have to import the ```Vehicle.jsx``` file in 
+your application.
+
+![alt text](image-4.png)
+
+## React Class Components
+[React Class Componenets](https://www.w3schools.com/react/react_class.asp)
+## Create a Class Component
+[Create a Class Component](https://www.w3schools.com/react/react_class.asp)
+ When creating a React component, the component's name must start with an upper case letter.
+
+ The component has to include the ``` extends Rect.Component ``` statement, this statement
+ creates an inheritance to React. Component, and gives your component access to React.
+ Component's functions.
+ The component also requires a ``` render()``` method, this method returns HTML
+ ```
+ class Car extends React.Component{
+  render(){
+    return <h2> Hi,I am a Car!</h2>;
+  }
+ }
+ ```
+ ## Component Constructor
+
+ if there is a ```constructor()``` function in your component,this function willbe 
+ called  when the component gets initiated.
+
+ The  constructor function is where you initiate the component's properties.
+
+ In React, component properties should be kept **in an object** called ```state```
+
+ You will learn more about ```state``` later in this tutorial
+
+The constructor function is also where you honor the inheritance of the 
+parent component by including the ```super()``` statement, which executes the parent
+component's constructor function, and your component has access to all the functions
+of the parent component(```React.Component```)
+
+## Props
+
+Another way of handling component properties is by using ```props```.
+Props are like function arguments, and you send them into the component as 
+attributes.
+You will learn more about ```pros``` in the next chapter.
+
+## Props in the Constructor
+If your component has a constructor function, the pros should 
+always be passed to the ```constructor``` and also to the ```React.Component``` via 
+the ```super()``` method
+
+## Components in Components
+We can refer to components inside other components:
+## Components in Files
+React is all about re-using code, and it can be smart to insert some of your 
+components in separate files.
+To do that, create a new file with a ``` .jsx``` file extension and put the code 
+inside it:
+
+Note that the file must start by importing React (as before),and it has to 
+end with the statement ```export default Car```
