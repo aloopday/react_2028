@@ -750,3 +750,44 @@ inside it:
 
 Note that the file must start by importing React (as before),and it has to 
 end with the statement ```export default Car```
+## React Class Component State
+
+React Class components have a built-in ```state``` object.
+The ```state``` object is where you **store property values** that belongs to the component.
+
+When the ```state``` object changes, the component re-renders.
+
+## Creating the state Object
+
+The ```state``` object is initialized in the ```constructor```:
+
+[state Object](https://www.w3schools.com/react/react_class.asp)
+
+## the ```state``` Object can contain as many properties as you like:
+Specify all the properies your component need:
+
+```
+class Car extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      brand:"Tesla",
+      model:"model 3",
+      color:"balck",
+      year:2025
+    };
+  }
+  render(){
+    return(
+      <div>
+      <h1>My Car </h1>
+      </div>
+    );
+  }
+}
+```
+Changing the ```state``` Object
+
+To change a value in the ```state``` object , use the ```this.setState() ```method.
+
+When  a value in the ```state``` object changes, the component will re-render , meaning that the output will change according to
