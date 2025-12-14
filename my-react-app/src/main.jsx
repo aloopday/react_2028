@@ -1,24 +1,27 @@
-import {createRoot} from 'react-dom/client';
+import {createRoot} from 'react-dom/client'
 import React from 'react';
 
 class Header extends React.Component{
     constructor(props){
         super(props);
-        this.state={favoritecolor:"read"};
+        this.state={favoritecolor:"red"};
     }
-    componentDidMount(){
-        setTimeout(
-            ()=>{
-                this.setState({favoritecolor:"yellow"}),1000
-            },1000)
+    changeColor=()=>{
+        this.setState({favoritecolor:"blue"});
     }
     render(){
+
         return(
-            <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+            <div>
+            <h1>My favorite Color is {this.state.favoritecolor}</h1>
+            <button type="button" onClick={this.changeColor}>Change color</button>
+
+        </div>
         );
+        
     }
 }
 
 createRoot(document.getElementById('root')).render(
     <Header />
-);
+)
