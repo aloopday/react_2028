@@ -750,3 +750,209 @@ inside it:
 
 Note that the file must start by importing React (as before),and it has to 
 end with the statement ```export default Car```
+
+Node.js 本身是**全局安装**的，但你提到的“node”很可能是在说使用 Node.js 的包管理器（npm 或 yarn、pnpm 等）来安装第三方包（如 express、react、lodash 等）时，是应该**全局安装**（`-g`）还是**项目局部安装**。
+
+下面详细说明两种方式的区别和推荐用法：
+
+### 1. Node.js 运行时本身
+- Node.js（node 命令）是**全局安装**在操作系统上的。
+- 你通过官网下载安装包、nvm（Node Version Manager）或其他方式安装一次，全系统可用。
+- 不需要也不应该为每个项目单独安装 Node.js 运行时。
+
+### 2. npm 包的安装方式
+
+| 安装方式          | 命令示例                          | 适用场景                                   | 推荐程度          |
+|-------------------|-----------------------------------|--------------------------------------------|-------------------|
+| **全局安装**      | `npm install -g <package>`<br>`npm install --global <package>` | 命令行工具（CLI）<br>例如：<br>• create-react-app（旧）<br>• vite<br>• typescript (tsc)<br>• eslint<br>• pm2<br>• nodemon<br>• yarn/pnpm 本身 | 只在必要时使用    |
+| **项目局部安装**  | `npm install <package>`（默认）<br>`npm install --save-dev <package>`（开发依赖） | 绝大多数情况<br>• 项目运行时依赖（如 express、react）<br>• 开发工具（如 webpack、babel、jest），但不作为全局命令使用 | **强烈推荐**      |
+
+### 推荐实践（现代前端/后端项目）
+
+- **绝大部分包都应该局部安装**（即项目级安装），放入 `package.json` 的 `dependencies` 或 `devDependencies` 中。
+- 原因：
+  1. 不同项目可以依赖不同版本的同一个包，避免版本冲突。
+  2. 团队协作时，大家安装相同的依赖（通过 `npm install`）。
+  3. 便于部署（部署时只需带上 `node_modules` 或通过 `package-lock.json` 恢复）。
+  4. 全局安装的包路径在不同系统可能不同，容易出问题。
+
+- **只有提供全局命令行的工具才全局安装**，例如：
+  ```bash
+  npm install -g vite        # 用 vite create 项目或 vite dev
+  npm install -g typescript  # 用 tsc 命令编译
+  npm install -g nodemon     # 用 nodemon 启动 Node 服务
+  ```
+
+- 更好方式：即使是 CLI 工具，也可以用 **npx** 临时执行局部或远程包，避免全局安装：
+  ```bash
+  npx create-vite@latest my-project
+  npx eslint .
+  ```
+
+### 总结建议
+
+- Node.js 运行时 → **全局安装一次**（或用 nvm 管理多个版本）
+- 第三方 npm 包 → **优先项目局部安装**（`npm install`）
+- 只有必须作为全局命令使用的 CLI 工具才考虑全局安装（`-g`），或者直接用 `npx` 代替全局安装
+
+这样你的项目更可控、可复现、团队协作更顺畅。
+
+ Always use the ```setState()``` method to change the state object, 
+it will ensure that the component knows its been updated and calls 
+the ```render()``` method (and all the other lifecycle methods).
+
+## Lifecycle of Components
+Each component in React has a lifecycle which you can monitor and manipulate
+during its three main phases.
+The three phases are :Mounting, Updating, and Unmounting.
+
+这三个阶段是：**挂载（Mounting）、更新（Updating）和卸载（Unmounting）**。
+
+### 详细中文解释（React 生命周期常用译法）：
+- **Mounting**：挂载 → 组件被创建并插入到 DOM 中的阶段。
+- **Updating**：更新 → 组件因 props 或 state 变化而重新渲染的阶段。
+- **Unmounting**：卸载 → 组件从 DOM 中移除的阶段。
+
+在中文 React 文档和社区中，最常见的翻译就是“**挂载、更新、卸载**”这三个词。
+
+## Mounting 
+
+Mounting means putting elements into the DOM 
+
+React has four built-in methods that gets called, in this order,when
+mounting a component:
+1. ```constructor()```
+2. ```getDerivedStateFromProps()```
+3. ```render```
+4. ```componentDidMount()```
+
+The ```render()``` method is required and will always be called,
+the others are optional and will be  called if you define them.
+
+## constructor
+
+The ```constructor()``` method is called before anything else, when the component
+is initiated, and it is the natural place to set up the initial ```state``` and other 
+initial values.
+
+The ```constructor()``` method is called before anything else, when the component is 
+initiated, and it is the  natural place to set up the initial ```state```
+and other initial values.
+
+The ```constructor()``` method is called with the ```props```, as arguments,
+and you should always start by calling the ```super(props)``` before anything 
+else, this will initiate the parent's constructor method and allows
+the component to inherit methods from its parent (React.Component).
+
+## getDerivedStateFromProps
+The ```getDerivedStateFromProps()``` method is called right before  rendering the 
+element(S) in the DOM.
+
+This is  the natural place to set the ```state``` object based on the initial ```props```
+It takes ```state``` as an argument, and returns an object with changes to the ```state``
+
+The example below starts with the favorite color being "red",but the ```getDerivedStateFromProps()```
+method updates the favorite color based on the ```favcol``atrribute
+
+## render
+The ```render()``` method is required , and is the method that actually outputs the HTML to 
+the DOM.
+
+## componentDidMount
+The ```componentDidMount()``` method is called after the component is rendered.
+
+This is where you run statements that requires that the component is already placed in 
+the DOM.
+## Updating 
+
+The next phase in the lifeCycle is when a component is updated.
+A component is updated whenever there is a change in the component's
+```state``` or ```props```.
+React has five built-in methods that gets called, in this order, when
+a component is updated:
+1.  ```getDerivedStateFromProps()```
+2. ```shouldComponentUpdate()```
+3. ```render()```
+4. ```getSnapshotBeforeUpdate()```
+5. ```componentDidUpdate()```
+
+The ```render()``` method is required and will always be called , the others are 
+optional. and will be called if you define them.
+
+
+## shouldComponentUpdate
+In the ```shouldComponentUpdate()``` method you can return a Boolean value that
+specifies whether React should continue with the rendering or not.
+
+The default value is ```true```
+The example below shows what happens when the ```shouldComponentUpdate()``` method 
+returns ```false```:
+
+## render 
+The ```render()``` method is of course called when a component gets updated, it 
+has to re-render the HTML to the DOM , with the new changes.
+
+The example below has a button that changes the favorite color to blue:
+
+
+## getSnapshotBeforeUpdate
+In the ```getSnapshotBeforeUpdate()``` method you have access to the ```pros``` and 
+```state```before the update, meaning that event after the update, you can 
+check what values were before the update.
+
+If the ```getSnapshotBeforeUpdate()``` method is present, you should also include 
+the ```componentDidUpdate()``` method, otherwise you will get an error.
+
+The example below might seem complicated, but all it does is this:
+When the component is ***mounting**** it is  rendered with the favorite color "red"
+When the component ***has been mounted***, a timer changes the state, and after one
+second, the favorite color becomes "yellow"
+This action triggers the ***update*** phase, and since this component 
+has a ```getSnapshotBeforeUpdate()``` method, this method is executed,
+and writes a message to the empty DIV 1 element.
+
+Then the ```componentDidUpdate()``` method is executed and 
+writes a message in the empty DIV2 element:
+
+## React Props
+[React Props](https://www.w3schools.com/react/react_props.asp)
+Props are arguments passed into React components.
+Props are passed to components via HTML attributes.
+```
+props stands for properties.
+```
+## React Props
+React Props are like function arguments in JavaScript and attributes in HTML.
+To send props into a component, use the same syntax as HTML attributes.
+
+Add a ```brand``` attribute to the ```Car``` element:
+
+```
+createRoot(document.getElementById('root')).render(
+  <Car brand="BMW" />
+);
+```
+The component receives the argument as a ```props``` object:
+
+The name of the objects is ```props```, but you can call it anything you want .
+
+![alt text](image-5.png)
+
+## Pass Multiple Properties
+
+You can send as many properties as you want.
+Every attribute is sent to the ```Car``` component as object properties.
+
+## Different Data Types
+React props can bre of any data type, including variables, numbers, strings, objects,arrays, and more.
+
+Strings can be sent inside quotes as in the examples above, but numbers, variables,and bo
+objects need to be sent inside curly brackets.\
+
+***Note*** has to be sent inside curly brackets to be treated as numbers:
+
+## Objects and Arrays has to be sent inside curly brackets:
+![alt text](image-6.png)
+## Object Props
+The component treats objects like objects, and you can use the dot notation to access the 
+properties.
