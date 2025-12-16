@@ -957,98 +957,83 @@ objects need to be sent inside curly brackets.\
 The component treats objects like objects, and you can use the dot notation to access the 
 properties.
 
-## React Destructuring Props
-[React Destructuring Props](https://www.w3schools.com/react/react_props_destructuring.asp)
-## Destructuring Props
-You can limit the properties a component receives by Using destructing.
 
-Note:React uses curly brackets to destructure props:```{color}```
+This error means Windows cannot find the `vite` executable. When you run `npm run dev` the `dev` script typically runs `vite`; npm will look for `vite` in your project's local binaries (node_modules/.bin) — so the usual cause is that Vite isn't installed in the project, or you're not in the project folder, or your node_modules are missing/corrupted.
 
-![alt text](image-7.png)
+Quick checklist and fixes (run these in your project root D:\react_new\react_2028\my-react-app):
 
-You can also destruct the properties you need inside the component.
-This way, the component receives all the properties, but the destructuring
-to limit the properties inside the component.
-
-## Destructing ...rest
-When you don't know how many properties you will receive, you can use the ```...rest``` 
-operator.
-Meaning: you can specify the properties you need, and the rest will be 
-stored in an  object.
-
-Example
-The component specifies the color and the brand, but the rest is stored in 
-an object like this:
-{model:"Tesla", year:2025}
-
-## Default Values
-With Destructing, you can set default values for props.
-If a property has no value, the default value will be used.
-
-![alt text](image-8.png)
-
-## React Props Children
-[React Props Children](https://www.w3schools.com/react/react_props_children.asp)
-
-In React ,you can send the content between the opening and closing 
-tags of a component, to another component.
-This can be accessed in the other component using the ```props.children``` property/
-## React Events
-[React Events](https://www.w3schools.com/react/react_events.asp)
-
-Just like HTML DOM events,React can  perform actions based on user events.
-React has the same events as HTML: click, change,mouseover etc.
-
-## Add Events
-**React events** are written in ***camelCase*** syntax:
-```onClick``` instead of ```onclick```
-React event handlers are written inside curly braces:
-onClick={shoot} instead of onclick="shoot()".
-React
+1) Confirm you're in the right folder and node / npm are available
 ```
-<button onClick={shoot}> Take the shot!</button>
+cd D:\react_new\react_2028\my-react-app
+node -v
+npm -v
 ```
-HTML
-```
-<button onclick="shoot()"> Take the shot!</button>
-```
-## Passing Arguments
-To pass an argument to an event handler,**use an arrow function.**
 
-Note:To pass an argument to an event handler, use an arrow function
-Note: To pass an argument to an event handler, use an arrow function.
-## React Conditional Rendering
-[React Conditional Rendering](https://www.w3schools.com/react/react_conditional_rendering.asp)
-
-In React, you can conditionally render components.
-There are several ways to do this.
-## ```if``` Statement
-We can use the ```if``` JavaScript operator to decide which component to render.
-
-Example:
+2) Try installing project dependencies (if you haven't)
 ```
-function MissedGoal(){
-  return <h1>Missed!</h1>;
-}
-function MadeGoal(){
-  return <h1>Goal!</h1>
+npm install
+```
+After that try:
+```
+npm run dev
+```
+
+3) If `npm install` didn't add Vite, install Vite as a dev dependency (recommended)
+```
+npm install --save-dev vite
+npm run dev
+```
+
+4) Quick local-run (no install) to test:
+```
+npx vite
+# or
+npm exec vite -- --version
+```
+If `npx vite` prints a version or starts the server, your script should work after adding the dependency.
+
+5) Verify Vite is present locally
+```
+npm list vite --depth=0
+# or check file
+dir node_modules\.bin\vite
+```
+If these show nothing/missing → install Vite.
+
+6) If your project was created with Create React App (CRA)
+CRA uses `react-scripts start`, not Vite. Check your package.json scripts. If you see `"start": "react-scripts start"` then run:
+```
+npm start
+```
+If the project is supposed to be a Vite app, package.json should have:
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
 }
 ```
-## Logical && Operator
+(If it doesn't, update it or recreate the project using the correct template.)
 
-Another way to conditonally render a React component is using the ```&&``` operator.
-In the example below, the heading will only be rendered if the ```props.brand``` property
-is not empty.
-
-![alt text](image-9.png)
-
-if props.brand is true , will render after &&
-
-## Ternary Operator
-Another way to conditionally render elements is by using a ternary operator.
-
+7) As a last resort (not recommended for most projects) you can install Vite globally:
 ```
-condition ? true :false
+npm install -g vite
 ```
-## React Lists
+But prefer local devDependency so the project is reproducible.
+
+Troubleshooting tips
+- If `npm install` fails, delete node_modules and package-lock.json then `npm install`.
+- Ensure no antivirus/Windows policy blocks node_modules/.bin execution (rare).
+- If using pnpm or yarn, use `pnpm install` / `yarn` and then `pnpm dev` / `yarn dev`.
+
+If you paste your package.json scripts section here I can tell you exactly what to run and whether the project expects Vite or CRA.
+
+
+## React Lists 
 [React Lists](https://www.w3schools.com/react/react_lists.asp)
+
+## avaScript Array map()
+[array Map](https://www.w3schools.com/react/react_es6_array_map.asp)
+
+The ```map()``` method creates a new array with the results of calling a function
+for every array element.
