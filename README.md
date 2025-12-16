@@ -956,3 +956,84 @@ objects need to be sent inside curly brackets.\
 ## Object Props
 The component treats objects like objects, and you can use the dot notation to access the 
 properties.
+
+
+This error means Windows cannot find the `vite` executable. When you run `npm run dev` the `dev` script typically runs `vite`; npm will look for `vite` in your project's local binaries (node_modules/.bin) — so the usual cause is that Vite isn't installed in the project, or you're not in the project folder, or your node_modules are missing/corrupted.
+
+Quick checklist and fixes (run these in your project root D:\react_new\react_2028\my-react-app):
+
+1) Confirm you're in the right folder and node / npm are available
+```
+cd D:\react_new\react_2028\my-react-app
+node -v
+npm -v
+```
+
+2) Try installing project dependencies (if you haven't)
+```
+npm install
+```
+After that try:
+```
+npm run dev
+```
+
+3) If `npm install` didn't add Vite, install Vite as a dev dependency (recommended)
+```
+npm install --save-dev vite
+npm run dev
+```
+
+4) Quick local-run (no install) to test:
+```
+npx vite
+# or
+npm exec vite -- --version
+```
+If `npx vite` prints a version or starts the server, your script should work after adding the dependency.
+
+5) Verify Vite is present locally
+```
+npm list vite --depth=0
+# or check file
+dir node_modules\.bin\vite
+```
+If these show nothing/missing → install Vite.
+
+6) If your project was created with Create React App (CRA)
+CRA uses `react-scripts start`, not Vite. Check your package.json scripts. If you see `"start": "react-scripts start"` then run:
+```
+npm start
+```
+If the project is supposed to be a Vite app, package.json should have:
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+```
+(If it doesn't, update it or recreate the project using the correct template.)
+
+7) As a last resort (not recommended for most projects) you can install Vite globally:
+```
+npm install -g vite
+```
+But prefer local devDependency so the project is reproducible.
+
+Troubleshooting tips
+- If `npm install` fails, delete node_modules and package-lock.json then `npm install`.
+- Ensure no antivirus/Windows policy blocks node_modules/.bin execution (rare).
+- If using pnpm or yarn, use `pnpm install` / `yarn` and then `pnpm dev` / `yarn dev`.
+
+If you paste your package.json scripts section here I can tell you exactly what to run and whether the project expects Vite or CRA.
+
+
+## React Lists 
+[React Lists](https://www.w3schools.com/react/react_lists.asp)
+
+## avaScript Array map()
+[array Map](https://www.w3schools.com/react/react_es6_array_map.asp)
+
+The ```map()``` method creates a new array with the results of calling a function
+for every array element.
