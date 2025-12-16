@@ -956,3 +956,99 @@ objects need to be sent inside curly brackets.\
 ## Object Props
 The component treats objects like objects, and you can use the dot notation to access the 
 properties.
+
+## React Destructuring Props
+[React Destructuring Props](https://www.w3schools.com/react/react_props_destructuring.asp)
+## Destructuring Props
+You can limit the properties a component receives by Using destructing.
+
+Note:React uses curly brackets to destructure props:```{color}```
+
+![alt text](image-7.png)
+
+You can also destruct the properties you need inside the component.
+This way, the component receives all the properties, but the destructuring
+to limit the properties inside the component.
+
+## Destructing ...rest
+When you don't know how many properties you will receive, you can use the ```...rest``` 
+operator.
+Meaning: you can specify the properties you need, and the rest will be 
+stored in an  object.
+
+Example
+The component specifies the color and the brand, but the rest is stored in 
+an object like this:
+{model:"Tesla", year:2025}
+
+## Default Values
+With Destructing, you can set default values for props.
+If a property has no value, the default value will be used.
+
+![alt text](image-8.png)
+
+## React Props Children
+[React Props Children](https://www.w3schools.com/react/react_props_children.asp)
+
+In React ,you can send the content between the opening and closing 
+tags of a component, to another component.
+This can be accessed in the other component using the ```props.children``` property/
+## React Events
+[React Events](https://www.w3schools.com/react/react_events.asp)
+
+Just like HTML DOM events,React can  perform actions based on user events.
+React has the same events as HTML: click, change,mouseover etc.
+
+## Add Events
+**React events** are written in ***camelCase*** syntax:
+```onClick``` instead of ```onclick```
+React event handlers are written inside curly braces:
+onClick={shoot} instead of onclick="shoot()".
+React
+```
+<button onClick={shoot}> Take the shot!</button>
+```
+HTML
+```
+<button onclick="shoot()"> Take the shot!</button>
+```
+## Passing Arguments
+To pass an argument to an event handler,**use an arrow function.**
+
+Note:To pass an argument to an event handler, use an arrow function
+Note: To pass an argument to an event handler, use an arrow function.
+## React Conditional Rendering
+[React Conditional Rendering](https://www.w3schools.com/react/react_conditional_rendering.asp)
+
+In React, you can conditionally render components.
+There are several ways to do this.
+## ```if``` Statement
+We can use the ```if``` JavaScript operator to decide which component to render.
+
+Example:
+```
+function MissedGoal(){
+  return <h1>Missed!</h1>;
+}
+function MadeGoal(){
+  return <h1>Goal!</h1>
+}
+```
+## Logical && Operator
+
+Another way to conditonally render a React component is using the ```&&``` operator.
+In the example below, the heading will only be rendered if the ```props.brand``` property
+is not empty.
+
+![alt text](image-9.png)
+
+if props.brand is true , will render after &&
+
+## Ternary Operator
+Another way to conditionally render elements is by using a ternary operator.
+
+```
+condition ? true :false
+```
+## React Lists
+[React Lists](https://www.w3schools.com/react/react_lists.asp)
