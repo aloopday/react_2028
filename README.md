@@ -1165,3 +1165,56 @@ destructing om
 
 如果这是你提供的代码片段，并且你有具体的疑问（如为什么报错或如何扩展），可以提供更多细节，我可以进一步解释！
 
+## React SubMit
+[React SubMit](https://www.w3schools.com/react/react_forms_submit.asp)
+
+You can control the submit acton by adding an event handler in the ```onSunbmit``` attribute for the 
+```<form>```
+## 
+## React Forms -Textarea
+[react Forms](https://www.w3schools.com/react/react_forms_textarea.asp)
+
+
+The textarea element in React is slightly different from ordinary HTML.
+In HTML the value of a textarea is the text between the start tag ```<textarea>``` and the end
+tag </textarea>
+```
+<textarea>
+Content of the textarea.
+</textarea>
+```
+In React the value of a textarea is placed in a value attribute, just like with the input element.
+We'll use the ```useState``` Hook to manage the value of the textarea.
+
+## React forms-Select
+[React Form](https://www.w3schools.com/react/react_forms_select.asp)
+
+
+## Select 
+A drop down list, or a select box, in React is also a bit different from HTML .
+In HTML, the selected value in the drop down list is defined with the ```selected ```
+attribute:
+
+```
+<select>
+ <option value="Ford">Ford</option>
+  <option value="Volvo" selected>Volvo</option>
+  <option value="Fiat">Fiat</option>
+</select>
+```
+
+In react, the selected value is defined with a ```value```attribute on the ```select```
+
+## React Forms - Multiple Input Fields
+[React form](https://www.w3schools.com/react/react_forms_multiple_inputs.asp)
+
+## Handling Multipe Inputs
+When you have multiple controlled input fields in a form, you can manage
+their state either by:
+1.Using a separate useState call for each input.
+2. Using a single useState call with an object to hold all form field values.
+We will use the second approach, as it is more common for forms.
+Make sure each input field has a unique name attribute.
+Also, when initializing the state, use an object instead a string, if the 
+input fields has no initial value, use an empty objec.
+
