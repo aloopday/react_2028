@@ -1037,3 +1037,28 @@ If you paste your package.json scripts section here I can tell you exactly what 
 
 The ```map()``` method creates a new array with the results of calling a function
 for every array element.
+## Map() in React 
+The ```map()``` method is commonly used in React to render lists of elements:
+Note: when using ```map()``` in React to create list items, each item needs a unique ```key``` prop.
+
+## Map with Object
+[Map with Object](https://www.w3schools.com/react/react_es6_array_map.asp)
+
+## map() Parameters
+the ```map()``` method takes three parameters:
+-```currentValue``` - The current element being prcessed
+-```index``` the index of the current element(optitional)
+-```array``` The array that map was called upon (optional)
+
+
+## React Lists
+In React, you will render lists with some type of loop.
+The JavaScript ```map()``` array method is genereally the preferred method.
+
+## Keys in React Lists
+Keys allow React to keep track of elements.This way, if an item is updated or removed,
+only that item will be re-rendered instead of the entire list.
+
+Keys must be unique among siblings, but they don't have to be unique across the 
+entire application.
+
