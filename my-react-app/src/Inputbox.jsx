@@ -1,5 +1,5 @@
 import { useState } from 'react';                // Fixed import
-import{createRoot} from 'react-dom/client'
+
 
  function MyForma() {                               // Fixed component name
   const [inputs, setInputs] = useState({});      // Initial state is fine
@@ -74,7 +74,5 @@ import{createRoot} from 'react-dom/client'
 
 // Fixed component name in render (MyForma → MyForm)
 
-createRoot(document.getElementById('root')).render(
-    <MyForma />
-)
+
 export { MyForma };
