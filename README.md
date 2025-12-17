@@ -1218,3 +1218,6 @@ Make sure each input field has a unique name attribute.
 Also, when initializing the state, use an object instead a string, if the 
 input fields has no initial value, use an empty objec.
 
+## Initial Values
+To add initial values to the input fields. in the example above, add the proper keys and 
+values to the ```useState``` object:
