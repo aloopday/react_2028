@@ -1062,3 +1062,22 @@ only that item will be re-rendered instead of the entire list.
 Keys must be unique among siblings, but they don't have to be unique across the 
 entire application.
 
+## React ES6 Destructuring
+[React ES6 Destructuring](https://www.w3schools.com/react/react_es6_destructuring.asp)
+
+Destrucring is a JavaScript feature that allows you to extract values from objects or arrays into 
+distinct variables. In React, it's commonly used with props, hooks, and state management.
+
+Note:Destructing makes React code cleaner and more readable by reducing repetitive object and 
+array access.
+
+## Destructing Arrays
+```
+Note: When destructuring arrays, the order that variables are declared is important.
+```
+destructing om
+
+
+## React Forms 
+[React Forms](https://www.w3schools.com/react/react_forms.asp)
+
