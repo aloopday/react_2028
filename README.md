@@ -1225,3 +1225,17 @@ values to the ```useState``` object:
 ## React Forms - Checkbox
 [React Checkbox](https://www.w3schools.com/react/react_forms_checkbox.asp)
 
+
+## Checkbox
+For checkboxes,use the ```checked```attribute instead of ```value``` to control its state.
+
+We'll use the ```useState```Hook to manage the value of the textarea:
+In the ```handleChange``` function, use the ```e.target.type``` property check if the current 
+input is a checkbox or not.
+## React Forms - Radio
+[Radio](https://www.w3schools.com/react/react_forms_radio.asp)
+
+Radio buttons are typically used in groups where only one option can be selected.
+All radio buttons in a group should share the same name attribute.
+You control radio buttons based on whether the radio button's value matches the 
+selected value in your state.

@@ -1,6 +1,4 @@
-
 import{useState} from 'react';
-import { createRoot } from 'react-dom/client';
 
 function MyForm(){
     const [selectedFruit, setSelectedFruit] =useState('banana');
@@ -53,6 +51,4 @@ function MyForm(){
     );
 }
 
-createRoot(document.getElementById('root')).render(
-    <MyForm/>
-)
+export {MyForm};
