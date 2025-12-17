@@ -1221,3 +1221,7 @@ input fields has no initial value, use an empty objec.
 ## Initial Values
 To add initial values to the input fields. in the example above, add the proper keys and 
 values to the ```useState``` object:
+
+## React Forms - Checkbox
+[React Checkbox](https://www.w3schools.com/react/react_forms_checkbox.asp)
+
