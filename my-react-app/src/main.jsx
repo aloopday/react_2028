@@ -1,18 +1,44 @@
 import {createRoot} from 'react-dom/client'
-import{useState} from 'react'
+import {useState} from 'react'
 
-function Myform(){
+function MyForm(){
+    const [inputs, setInputs]=useState({
+        firstname:"Charles",
+        lastname:"Wang"
+    });
 
-    const [name,setName] =useState("");
+    const handleChange =(e) =>{
+        const name=e.target.name;
+        const value=e.target.value;
+        setInputs(values=>({...values,[name]:value}))
+    }
+
     return(
         <form>
-            <label>Enter your name:
+            <label>
+                First Name:
+                <input 
+                type="text"
+                name="firstname"
+                value={inputs.firstname}
+                onChange={handleChange}
+                />
+            </label>
+            <br />
+            <br/>
+            <label>
+                Last Name:
                 <input
                 type="text"
-                value={name}
-                onChange= {(e)=>setName(e.target.value)}/>
+                name="lastname"
+                value={inputs.lastname}
+                onChange={handleChange}
+                
+                />
+
+
             </label>
-            <p>Current value:{name}</p>
+            <p>Current values:{inputs.firstname} {inputs.lastname}</p>
         </form>
     )
 
@@ -20,5 +46,4 @@ function Myform(){
 }
 createRoot(document.getElementById('root')).render(
     <MyForm />
-);
-
+)
