@@ -1303,4 +1303,7 @@ There are many ways to style React with CSS, this tutorial will take a closer lo
 - CSS Modules
 ## Inline Styling 
 To style an element with the inline style attribute, the value must be a javaScript object:
-
+```
+Note: In JSX, JavaScript expressions are written inside curly braces, and since JavaScript objects also use curly braces, the 
+styling in the example above is written inside two sets of curly braces {{}}.
+```
