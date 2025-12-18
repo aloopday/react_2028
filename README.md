@@ -1239,3 +1239,68 @@ Radio buttons are typically used in groups where only one option can be selected
 All radio buttons in a group should share the same name attribute.
 You control radio buttons based on whether the radio button's value matches the 
 selected value in your state.
+## React Portals
+[React Portal](https://www.w3schools.com/react/react_portals.asp)
+
+What are React Portals?
+## A portal is a React method that is included in the ```react-dom``` package.
+
+## Syntax
+```
+import {createPortal} from 'react-dom';
+createPortal(children,domNode)
+```
+The first argument(children) is any renderable React content, like elements, strings or fragmetns.
+The second argument(domNode) is a DOM element where the portal should 
+be inserted instead.
+
+## Creating a Modal with Portal
+React Portals are particularly useful for components like modals, tooltips, and dialogs that need to break out of their container
+s layout.
+Here is an example of a modal component where the modal is rendered outside  the parent component's DOM hierarchy:
+## Why use Portals
+Portals are particularly useful for:
+- Modals and dialogs
+- Tooltips
+- Floating menus
+- Notifications
+Anu UI element that needs to "break out " of its container
+s layout, espacially when the parent componets has:
+- ```overflow:hidden```
+- ```z-index``` confilicts
+- Complex positioning requirements
+
+## React Suspense
+React Suspense lets you display an alternative HTML while 
+waiting for code or data to load.
+The alternative HTML can be a component, text, or any valid content.
+
+## What is Suspense?
+Suspense is a React feature that lets your components display an alternative 
+HTML while waiting for code or data to load.
+The most common use cases are :
+- Date fetching with suspense-enabled frameworks
+- Loading components dynamically with ```React.lazy()```
+## Using Suspense
+If a component takes time to load, you can use a ```suspense```
+componetn, and it will display the fallback content while the component 
+is loading.
+
+## Using Suspense with lazy Loading
+
+- ```lazy()``` lets you load a component dynamically
+- ```Suspense``` shows a fallback while the component loads
+
+
+## Multiple Components
+One Suspense component can wrap multiple lazy components:
+## Styling React Using CSS
+[Styling React Using Css](https://www.w3schools.com/react/react_css_styling.asp)
+
+There are many ways to style React with CSS, this tutorial will take a closer look at three common ways:
+- Inline styling 
+- CSS stylesheets
+- CSS Modules
+## Inline Styling 
+To style an element with the inline style attribute, the value must be a javaScript object:
+

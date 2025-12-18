@@ -1,7 +1,7 @@
 function Sidebar(){
     return(
         <aside style={{
-            width:'200',
+            width:'200px',
             background:'#f8f9fa',
             padding:'20px',
             borderRadius:'8px'
