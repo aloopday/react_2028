@@ -1,19 +1,18 @@
-import {createRoot } from 'react-dom/client';
-import {Suspense} from 'react';
-import MyFruits from './Fruits'; // Adjust path as needed
-// click the "Fruits.jsx" tab to check out the Fruits.jsx file
+import { createRoot } from 'react-dom/client';
+import { Suspense, lazy } from 'react';
 
-function App(){
-    return(
-        <div>
-            <Suspense fallback={<div>Loading ...</div>}>
-            <MyFruits />
-            
-            </Suspense>
-        </div>
-    );
+const Cars = lazy(() => import('./Cars'));
+
+function App() {
+  return (
+    <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Cars />
+      </Suspense>
+    </div>
+  );
 }
 
 createRoot(document.getElementById('root')).render(
-    <App />
+  <App />
 );
