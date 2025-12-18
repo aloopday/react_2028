@@ -1,6 +1,8 @@
 
 import{useState} from 'react';
 import { createRoot } from 'react-dom/client';
+import{MyApp} from './Modal.jsx';
+import{App} from './Button.jsx';
 
 function MyForm(){
     const [selectedFruit, setSelectedFruit] =useState('banana');
@@ -49,7 +51,10 @@ function MyForm(){
                 </label>
                  <br />
                 <button type ="submit">Submit</button>
+                <MyApp />
+                <App />
         </form>
+        
     );
 }
 
