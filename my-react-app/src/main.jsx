@@ -1,10 +1,13 @@
 import {createRoot} from 'react-dom/client';
-import Buttomtest from './Buttomtest';
+
+import TestHeader from './TestHeader.jsx';
+
 function App(){
   return(
     <>
     <h2>Welcome to Dog finding !</h2>
-    <Buttomtest />
+   
+    <TestHeader />
     </>
   );
 }

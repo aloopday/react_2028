@@ -1347,3 +1347,23 @@ Note: CSS Modules are not a part of the React core library, but are supported by
 [Multiple Classes](https://www.w3schools.com/react/react_css_modules.asp)
 
 
+## Composing Classes
+CSS Modules allow you to combine classes using the ```composes``` keyword:
+Which means that one class can inherit the styles of another class.
+For the previous example, both the ```primary```and the ```secondary```
+classes are depending on the styles
+of the ```mybutton``` class.
+This can be done by adding ```composes:mybutton```to the ```primary``` and ```sencondary```
+
+## Global Classes
+When using CSS Modules, the classes in the ```.module.css``` file can only be used 
+in the component that imports them. This is done by prefixing the class name with 
+a hash of the file name and a unique identifier. It is safe to use the same class name in differnt files, as the names will be unique.
+However,sometimes you want your calsses to be available globally, and use them in other componetns.
+You can do this with the ```:global``` syntax:
+
+## Combine Global and Local Classes
+You can combine global and local calsses in the dame CSS Module:
+## React CSS-in-JS
+[React Css—in-JS](https://www.w3schools.com/react/react_css_js.asp)
+
