@@ -1307,3 +1307,43 @@ To style an element with the inline style attribute, the value must be a javaScr
 Note: In JSX, JavaScript expressions are written inside curly braces, and since JavaScript objects also use curly braces, the 
 styling in the example above is written inside two sets of curly braces {{}}.
 ```
+
+## camelCased Property Names
+[camelCased Property](https://www.w3schools.com/react/react_css_styling.asp)
+
+Since the inline CSS is written in a JavaScript object, properties with hyphen separators, like ```backgroud-color```
+must be written with camel case syntax:
+
+## JavaScript Object
+[JavaScript Object](https://www.w3schools.com/react/react_css_styling.asp)
+## Css Stylesheet
+
+You can write your CSS styling in a separate file, juset save the file with the ```.css``` file extension,
+
+## React know that files impotted with the  .css extension, should be treated as a CSS Stylesheet.
+```
+Note:The styles will only be available for the component that imported it.
+```
+## CSS Modules
+Another way of adding styles to your application it to use CSS Modules.
+CSS Modules are convenient for components that are placed in separate files.
+```
+The CSS inside a module is available only for the component that imported if, and you do not 
+have to worry about name conflicts.
+```
+## React  css modules
+[Modules](https://www.w3schools.com/react/react_css_modules.asp)
+
+CSS Modules let you write CSS that is Scoped locally to a specific component.
+This prevents Css class Name confilicts and makes your styles more maintainable.
+
+## What are CSS Modules?
+In React, Css Modules are CSS files where class names are scoped locally by default.
+
+```
+Note: CSS Modules are not a part of the React core library, but are supported by many React build tools.
+```
+## Multiple Classes
+[Multiple Classes](https://www.w3schools.com/react/react_css_modules.asp)
+
+

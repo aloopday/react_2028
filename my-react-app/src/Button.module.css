@@ -1,0 +1,20 @@
+.mybutton{
+  
+    font-size:20px;
+    background-color: rgb(196, 228, 15);
+    padding:10px 20px;
+    border:2px solid black;
+    border-radius:4px;
+    cursor:arrow;
+
+} 
+
+.primary{
+    background-color:#007bff;
+    color:tomato;
+}
+
+.secondary{
+    background-color:#6c757d;
+    color:white;
+}
