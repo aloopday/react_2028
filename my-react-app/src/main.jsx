@@ -1,45 +1,22 @@
-import {createRoot } from 'react-dom/client';
-import React from 'react';
+import {createRoot} from 'react-dom/client';
 
-class Car extends React.Component{
-    constructor(props){
-        super(props);
-        this.state={
-            brand:"tesla",
-            model:"model 2",
-            color:"red",
-            year:2025
-        };
-    }
+import TestHeader from './TestHeader.jsx';
 
-    changeColor = () =>{
-        this.setState({color:"black"});
-    }
-    render(){
-
-        return(
-            <div>
-            <h1>My {this.state.brand}</h1>
-            <p>
-                This is a {this.state.color}
-                {this.state.model}
-                from {this.state.year} .
-            </p>
-            <button
-            type="button"
-            onClick={this.changeColor}>
-
-                Change color
-
-            </button>
-        </div>
-
-        );
-        
-    }
+function App(){
+  return(
+    <>
+    <h2>Welcome to Dog finding !</h2>
+   
+    <TestHeader />
+    </>
+  );
 }
 
+<<<<<<< HEAD
 
 createRoot(document.getElementById('root')).render(
     <Car />
 )
+=======
+createRoot(document.getElementById('root')).render(<App/>);
+>>>>>>> 2fa4ad3fb1d0d3726779a48a599a956589c2fd60
