@@ -1,44 +1,31 @@
-import { createRoot } from 'react-dom/client';
-import { useState, useTransition } from 'react';
+import {createRoot} from 'react-dom/client';
 
-function SearchResults({query}){
-  //Simulate slow search results
-  const items=[];
-  if(query){
-    for(let i=0; i<1000;i++){
-      items.push(<li key={i}>Result for {query}-{i}</li>);
-    }
-  }
-  return <ul>{items}</ul>;
+//A HOC that adds a border to any component
+function withBorder(WrappedComponent){
+  return function NewComponent(props){
+      return(
+    <div style={{border:'2px solid blue',padding:'10px'}}>
+      <WrappedComponent {...props} />
+    </div>
+  );
+};
 }
 
+// Simple component without border
+function Greeting({name}){
+  return <h1>Hello,{name}!</h1>;
+}
+
+//Create a new component with border
+const GreetingWithBorder =withBorder(Greeting);
+
 function App(){
-  const [input,setInput]=useState('');
-  const [query,setQuery] =useState('');
-  const[isPending,startTransition] =useTransition();
-
-  const handleChange =(e)=>{
-    //urgetnt:Updata input field
-    setInput(e.target.value);
-    //Non-urgent: Update search results
-
-    startTransition(()=>{
-      setQuery(e.target.value);
-    });
-  };
-
-return(
-  <div>
-    <input
-        type="text"
-        value={input}
-        onChange={handleChange}
-        placeholder="Type to search..."
-        />
-        {isPending && <p>Loading results...</p>}
-        <SearchResults query={query} />
-  </div>
-);
+  return(
+    <div>
+      <Greeting name="Charles" />
+      <GreetingWithBorder name="Charles" />
+    </div>
+  );
 }
 
 createRoot(document.getElementById('root')).render(
