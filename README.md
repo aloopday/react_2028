@@ -1241,3 +1241,109 @@ You control radio buttons based on whether the radio button's value matches the
 selected value in your state.
 
 
+## react  CSS
+[react CSS ](https://www.w3schools.com/react/react_css_js.asp)
+
+What is CSS-in-JS
+
+CSS-in-JS is  a styling technique where you can write CSS directly in 
+your JavaScript code.
+This approach allows you to:
+- Write CSS using JavaScript
+- Create component-scoped style
+- Use dynamic styles based on props
+- Avoid CSS class name conflicts.
+```
+In this turorial, we'll use the popular ```styled-components``` library.
+```
+
+## Getting Started
+CSS-in-JS is not a part of the React core library, but can be installed using many 
+React build tools, like Vite, Webpack, or Create React App.
+To install```styled-components```run the following command:
+```
+npm install styled-components
+```
+
+![alt text](image-12.png)
+Without CSS-in-JS, you would have to either:
+- Write CSS in a separate .css file and import it into your React components
+- Use inline styles.
+## Notice that:
+- We use the ```styled``` object create components
+- Styles are written inside template literals(backticks)
+- You can use regular CSS Syntax
+## Props in Styled Components
+[Props in styled Components](https://www.w3schools.com/react/react_css_js.asp)
+
+Another powerful feature of CSS-in-JS is the ability to use props to make style dynamic,
+Let's create an example where we have two buttons, one primary and one secondary.
+We want to base their background color on the value of the ```btntype``` prop:
+
+## Extending Styles
+
+Another way of letting multiple elements have the same styles is ot extend existing styled components.
+
+
+
+For example, we can create a PrimaryButton and SuccessButton that both have the same styles as the Button component, but they also have separate background colors:
+
+![alt text](image-13.png)
+
+## Global Styles
+You can also create global styles, which will be given normal class name and will be available for all components:
+You can also create global styles, which will be given normal class name and will be available for all components:
+
+## React Router
+[React Router](https://www.w3schools.com/react/react_router.asp)
+
+## Install React Router
+In the command line, navigate to your project directory and run 
+the following command to install the package:
+```
+npm install react-router-dom
+```
+## Wrap Your App with BrowserRouter
+Your application must be wrapped with the ```BrowserRouter``` component to enable routing:
+```
+function App(){
+  return(
+    <BrowserRouter>
+    {/*Your app content */}
+  );
+}
+```
+## Create Views
+To demonstrate routing , we'll create three pages (or views ) in our application: HOme 
+ About , and Contact:
+ We will create all three views in the same file for simplicity, but 
+ you can of courser split them into separate files.
+
+ ## Basic Routing 
+ React Router uses three main components for basic routing:
+ - Link: Creates navigation links that update the URL
+ - Routes: A container for all your route definitions
+ - Route: Defines a mapping between a URL path and a component
+
+ Let's add navigation links and routes for each link:
+
+ ![alt text](image-14.png)
+
+ - BrowserRouter wraps your app and enables routing functionality
+ - Link components create navigation links
+ - Routes and Route define your routing configuration
+
+ ##  Nested Routes
+ You can have a ```Route``` inside another ```Route```,this is called 
+ nested routes.
+ Nested routes allow you change parts of the page when you navigate to a n
+ new  URL, while other parts is not changed or 
+ reloaded, almost like having a page within a page.
+
+ Let's use the example above ,and add two new components that
+ will be rendered inside the ```Products``` component.
+ One called ``` CarProducts``` and one called ```BikeProduds```
+
+ ## Style Active Links
+ [Style Active Links](https://www.w3schools.com/react/react_router.asp)
+ 
