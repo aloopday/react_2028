@@ -1,26 +1,44 @@
-import {createRoot} from 'react-dom/client';
-import {BrowserRouter,Routes,Route,Link, useParams} from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { useState, useTransition } from 'react';
 
-function Info(){
-  const {firstname}=useParams();
-  return <h1>Hello,{firstname}</h1>
+function SearchResults({query}){
+  //Simulate slow search results
+  const items=[];
+  if(query){
+    for(let i=0; i<1000;i++){
+      items.push(<li key={i}>Result for {query}-{i}</li>);
+    }
+  }
+  return <ul>{items}</ul>;
 }
 
 function App(){
-  return(
-    <BrowserRouter>
-    <nav>
-      <Link to="/customer/Emil">Emil</Link>|{" "}
-      <Link to="/customer/Tobias">Tobias</Link>|{" "}
-      <Link to ="/customer/Alex">Alex</Link>
-    </nav>
+  const [input,setInput]=useState('');
+  const [query,setQuery] =useState('');
+  const[isPending,startTransition] =useTransition();
 
-    <Routes>
-      <Route path="/customer/:firstname" element={<Info/>} />
-    </Routes>
-    
-    </BrowserRouter>
-  )
+  const handleChange =(e)=>{
+    //urgetnt:Updata input field
+    setInput(e.target.value);
+    //Non-urgent: Update search results
+
+    startTransition(()=>{
+      setQuery(e.target.value);
+    });
+  };
+
+return(
+  <div>
+    <input
+        type="text"
+        value={input}
+        onChange={handleChange}
+        placeholder="Type to search..."
+        />
+        {isPending && <p>Loading results...</p>}
+        <SearchResults query={query} />
+  </div>
+);
 }
 
 createRoot(document.getElementById('root')).render(
