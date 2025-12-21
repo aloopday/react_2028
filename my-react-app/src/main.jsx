@@ -1,31 +1,37 @@
-<<<<<<< HEAD
-import { createRoot } from 'react-dom/client';
-import styled from 'styled-components';
-import ExtendBtn from './ExtendBut.jsx';
-const Button = styled.button`
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: ${props => props.btntype === 'primary' ? '#007bff' : '#6c757d'};
-  color: white;
-  cursor: pointer;
-`;
+import {createRoot} from 'react-dom/client';
+import{BrowserRouter,Routes,Route,Link} from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
-      <p>hello Welcome to my React App</p>
-      <Button btntype="primary">Primary Button</Button>
-      <br />
-      <br />
-      <Button>Secondary Button</Button>
-      <ExtendBtn />
-    </div>
+function Home(){
+  return <h1>Home Page</h1>;
+}
+
+function About(){
+  return <h1>About Page</h1>;
+}
+
+function Contact(){
+  return <h1>Contact Page</h1>
+
+}
+
+function App(){
+  return(
+    <BrowserRouter>
+    {/* Navigation Links */}
+    <nav>
+      <Link to ="/">Home</Link>|{""}
+      <Link to ="/about">About Us</Link>|{""}
+      <Link to ="/contact">Contact </Link>|{""}
+    </nav>
+    {/*Routes */}
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+        </Routes>
+
+    </BrowserRouter>
   );
 }
 
-createRoot(document.getElementById('root')).render(
-  <App />
-);
-=======
->>>>>>> 9a24b91918f9bf89529c0630faf79850a203c6a2
+createRoot(document.getElementById('root')).render(<App />);
