@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { createRoot } from 'react-dom/client';
 import styled from 'styled-components';
 import ExtendBtn from './ExtendBut.jsx';
@@ -26,3 +27,5 @@ function App() {
 createRoot(document.getElementById('root')).render(
   <App />
 );
+=======
+>>>>>>> 9a24b91918f9bf89529c0630faf79850a203c6a2
