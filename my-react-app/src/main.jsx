@@ -1,36 +1,37 @@
 import {useState} from 'react';
 import {createRoot} from 'react-dom/client';
 
-function Mycar(){
-  const [car,setCar] =useState(
-    {
-      brand:"tesla",
-      model:"model y",
-      year:"1964",
-      color:"red"
-    });
+function Component1(){
+  const [user,setUser]=useState("Alex");
 
-    const updateColor= ()=>{
-      setCar(perviousState =>{
-        return { ...perviousState,color:"blue"}
-      });
-    }
   return(
     <>
-  <h1>This is my {car.brand}</h1>
-  <p>
-    It is a {car.color} {car.model} from {car.year}.
-  </p>
-  <button 
-  type="button"
-  onClick={updateColor}
-  >
-    Blue
-  </button>
+    <h1>{`Hello ${user}!`}</h1>
+    <Component2 user={user} />
     </>
-  )
+  );
 }
 
-createRoot(document.getElementById('root')).render( 
-  <Mycar />
+function Component2({user}){
+  return(
+    <>
+    <h1>Component 2</h1>
+    <Component3 user={user} />
+    </>
+  );
+}
+
+function Component3({user}){
+  return(
+    <>
+    <h1>Component 3</h1>
+    <h2>{`Hello ${user} again!`}</h2>
+
+    </>
+  );
+}
+
+createRoot(document.getElementById('root')).render(
+  <Component1 />
 );
+
