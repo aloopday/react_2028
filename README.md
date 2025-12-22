@@ -1475,3 +1475,36 @@ We could create multiple state Hooks to tract individul values.
 ## Updating Objects and Arrays in State
 When state is updtated, the entire state gets overwritten.
 What if we only want to update the color of our car?
+
+## React useEffect Hooks
+The ````useEffect ``` Hook allows you to perform side effects in your components.
+Some examples of side. effects are: fetching data, directly updating the DOM, and timers.
+```useEffect``` accepts two arguments. The second argument is opional.
+```useEffect(<function>,<dependency>)```
+
+If there are multiple dependencies, they should be included in the 
+```useEffect``` dependency array.
+
+## Effect Cleanup
+Some effects require cleanup to reduce memory  leaks.
+Timeouts, subscriptions, event listeners, and other effects  that
+no longer needed should be disposed.
+We do this by including a return function at the end of the ```useEffect``` Hook.
+
+## React useContext Hook
+[React useContext Hook](https://www.w3schools.com/react/react_usecontext.asp)
+## React Context
+React Context is a way to manage state globally.
+It can be used together with the ```useState``` Hook to share 
+state between deeply nested components more easily than
+with ```useState``` alone.
+
+## The problem 
+State should be held by the highest parent component
+in the stack that requires access to the state.
+To illustrate, we have many nested components.
+The component at the top and bottom of the stack need 
+access to the state.
+To do this without Context,we will need to pass the state
+as "props" through each nested component. This is called
+"prop drilling".
