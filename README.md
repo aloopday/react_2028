@@ -1394,4 +1394,84 @@ To demonstrate routing , we'll create three pages (or views ) in our application
 
   Create a function that adds a border around whatever component you pass 
   to it:
+
+  ## React Saas Styling
+  [React Saas Styling](https://www.w3schools.com/react/react_sass_styling.asp)
+
+  ## What is Saas?
+  Saas is a CSS pre-processor.
+  Sass files are executed on the server and sends CSS to the browser.
+  Sass adds extra features to css like variables, nesting ,mixins, and more.
   
+
+  ## Create a Sass file
+  Create a Sass file the same way as your create CSS files, but Sass files  have the file extension ```.scss```
+
+## Sass Modules
+Sass has many Built-in Modules that you can use to mainpulate colors,math, strings,etc.
+One example is the ```sass:color``` Module.
+It has a function to make a color darket or lighter, just by giving it a 
+percentage:
+
+## React Hooks
+[React Hook](https://www.w3schools.com/react/react_hooks.asp)
+
+React Hooks allow  functions to have access to state and other React features
+without using calsses.
+They proviede a more direct API to React concepts like props, state,context, refs  and lifecycle.
+## What is a Hook?
+Hooks are functions that let you "hook into" React state and lifeCycle features from functional components.
+
+## Hook Rules
+- Hooks can only be called inside React function components.
+- Hooks can only be called at the top level of a components.
+- Hooks cannot be conditional
+## Note: Hooks will not work in React class components.
+
+## React useState Hook
+[useState](https://www.w3schools.com/react/react_usestate.asp)
+
+The React ```useState``` Hook allows us to track state in a function component.
+State generally refers to data or properies that need to be tracking in an application.
+
+## Import ```useState```
+To use the ```useState``` Hook, we first need to ```import```it  into our componet.
+
+At the top of your componet, ```import``` the useStateHook;
+
+
+```
+import {useState} from "react";
+```
+NOtice ,we are destructuring ```useState``` Hook.
+
+## Initialize ```useState```
+We initialize our state by calling ```useState``` in our function component.
+```useState``` accepts an initial state and returns two values:
+- The current state.
+- A function that updates the state.
+
+```
+import {useState} from "react";
+function FavoriteColor(){
+  const [color,setColor]= useState("red");
+}
+```
+
+## Notice we are destructuring the returned values from ```useState```
+The first value, ```color```, is our current state.
+The second value,```setColor``` ,is the function that is used to update our state.
+```
+These names are variables that can be named anything you would like.
+```
+Lastly, we set the initial state to "red":```useState("red")```
+
+## wHAT CAN STATE Hold?
+The ```useState``` Hook can be used to keep track of strings,numbers,
+booleans,arrays, objects, and any combination of these!
+
+We could create multiple state Hooks to tract individul values.
+
+## Updating Objects and Arrays in State
+When state is updtated, the entire state gets overwritten.
+What if we only want to update the color of our car?
