@@ -1346,4 +1346,52 @@ To demonstrate routing , we'll create three pages (or views ) in our application
 
  ## Style Active Links
  [Style Active Links](https://www.w3schools.com/react/react_router.asp)
- 
+
+ ## URL Parameters 
+ [URL Parameters](https://www.w3schools.com/react/react_router.asp)
+
+ ## What is use Transition?
+  The ```useTransition``` hook helps you keep your React app responsive during headvy
+  updates.
+
+  It lets you mark some state updates as "non-urgent", allowing other, more urgent
+  updates to happen first.
+
+  ## When to Use Transitions?
+  Use transitions when you have :
+  - A slow operation that might freeze the UI
+  - Updates that aren't immediately critical
+  - Search results that take time to. display
+
+  ## React forwardRef
+  [React forwardRef](https://www.w3schools.com/react/react_forward_ref.asp)
+  ## What is forwardRef?
+  ```forwardRef``` lets your component pass a reference to one of its 
+  children. It's  like giving a direct reference to a DOM element inside
+  your component.
+  Common uses for "forwardRef":
+  - Focusing input elements
+  - Triggering animations
+  - Measuring DOM elements
+  - Integrating with third-party libraries
+  ![alt text](image-15.png)
+  In this example:
+  - We wrap our input component with ```forwardRef```
+  - The component receives a ```ref``` as its second parameter
+  - The parent can now control the input element directly
+  **Note**: Onlu use ```forwardRef``` when you need direct access to a 
+  DOM element. For most cases, you can use props and state instead.
+  ## React Higher Order Components
+  [React Higher Order Components](https://www.w3schools.com/react/react_hoc.asp)
+
+  ## What is a Higher Order Component?
+  A Higher Order Component(HOC) is like a wrapper that adds extra features
+  to your React components. Think of it like putting a case on your phone - the case adds new features(like water protection) without changing the  phone itself.
+
+  **Note**: HOCs are functions that take a component and return an enhanced version of that component.
+  ## Example: Adding a Border
+  To demonstrate how HOCs work, let's create a simple example-adding a border to any component:
+
+  Create a function that adds a border around whatever component you pass 
+  to it:
+  
