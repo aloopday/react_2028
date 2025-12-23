@@ -1,37 +1,26 @@
-import {useState} from 'react';
-import {createRoot} from 'react-dom/client';
+import {useRef,useState,useEffect} from 'react';
+import{createRoot} from 'react-dom/client';
 
-function Component1(){
-  const [user,setUser]=useState("Alex");
+function App(){
+  const [inputValue, setInputValue] =useState("");
+  const previousInputValue =useRef("");
 
+  useEffect(()=>{
+    previousInputValue.current=inputValue;
+  },[inputValue]);
+  
   return(
     <>
-    <h1>{`Hello ${user}!`}</h1>
-    <Component2 user={user} />
-    </>
-  );
-}
-
-function Component2({user}){
-  return(
-    <>
-    <h1>Component 2</h1>
-    <Component3 user={user} />
-    </>
-  );
-}
-
-function Component3({user}){
-  return(
-    <>
-    <h1>Component 3</h1>
-    <h2>{`Hello ${user} again!`}</h2>
-
+    <input
+        type="text"
+        value={inputValue}
+        onChange={(e)=>setInputValue(e.target.value)} />
+        <h2>Current Value: {inputValue}</h2>
+        <h2>Previous Value:{previousInputValue.current}</h2>
     </>
   );
 }
 
 createRoot(document.getElementById('root')).render(
-  <Component1 />
+  <App />
 );
-

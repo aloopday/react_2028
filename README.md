@@ -1508,3 +1508,31 @@ access to the state.
 To do this without Context,we will need to pass the state
 as "props" through each nested component. This is called
 "prop drilling".
+
+## The Solution
+The solution is to create context.
+## Creat Context
+To create context, you must import ```createContext``` and initialize it:
+```
+import { useState, createContext, useContext } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const UserContext = createContext();
+```
+
+## React ```useRef``` Hook
+[React useRef Hook](https://www.w3schools.com/react/react_useref.asp)
+
+The ```useRef``` Hook allows you to persist values between renders.
+It can be used to store a mutable value that does not cause a re-render when updated.
+It can be used to access a DOM element directly.
+
+## Does Not Cause Re-renders
+
+## Accessing DOM Elements
+The ```useRef``` Hook is often used to access DOM elements directly.
+First, we create a ref using the ```useRef``` Hook:```const inputElement =useRef();```
+Then, we attach the ref to a Dom element using the ref attribute in JSX:```<input
+type="text" ref={inputElement} />```
+Finally, we can access the DOM element using the ```current``` property:```inputElement.current.```
+
