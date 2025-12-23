@@ -1536,3 +1536,50 @@ Then, we attach the ref to a Dom element using the ref attribute in JSX:```<inpu
 type="text" ref={inputElement} />```
 Finally, we can access the DOM element using the ```current``` property:```inputElement.current.```
 
+## React useReducer Hook
+[React useReducer Hook](https://www.w3schools.com/react/react_usereducer.asp)
+
+The ```useReducer``` Hook is similar to the ```useState``` Hook.
+It allows for custom state logic.
+If you  find yourself keeping track of multiple pieces of state that
+rely on complex logic,```useReducer``` may be useful
+
+## Syntax
+
+The useReducer Hook accepts three arguments.
+
+
+```
+useReducer(reducer,initialState, init)
+```
+The  ```reducer``` function contains your custom state logic and the 
+```initialState``` can be a simple value,but generally will contain an 
+object. The ```init``` argument is optional and is used to initialize the state.
+
+The ```useReducer``` Hook returns the current ```state``` and a ```dispatch``` method.
+
+Here is an example where we use ```useReducer``` to keep track of the score of two players:
+
+## React ```useCallback``` Hook
+The ```useCallback``` Hook is used to memoize a callback function.
+Memoizing a function means caching the result of a function so that it does not 
+need to be recalculated.
+The ```useCallback``` function only re-executes when one of its dependencies 
+changes value.
+
+This allows us to isolate resource intensive functions so 
+that they will not automatically run on every render.
+
+
+The ```useCallback``` and ```useMemo``` Hooks are similar:
+```useMemo``` returns a memoized value.
+```useCallback``` returns a memoized function.
+
+## Syntax
+The ```useCallback``` Hook accepts two arguments.
+```
+useCallback(callback, dependencies)
+```
+```callback```: The function that you want to memoize.
+```dependencies```:An array of dependencies for the callback function.
+The memoized callback will only change if one of these dependencies has changed.
