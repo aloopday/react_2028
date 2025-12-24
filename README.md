@@ -1614,3 +1614,35 @@ useCallback returns a memoized function.
 The ```useMemo``` Hook can be used to keep expensive, resource intensive functions
 from needlessly running.
 
+## Use ```useMemo```
+To fix this performance issue, we can use the ```useMemo``` Hook to memoize the ```expensiveCalculation``` function
+This will cause the function to only run when needed.
+We can wrap the expensive function call with ```useMemo```.
+The ```useMemo``` Hook accepts a second parameter to declare dependencies. The 
+expensive function will only run when  its dependencies have changed.
+
+In the following example , the expensive function will only run when
+```count``` is changed and not when todo's are added.
+## React Custom Hooks
+[React Custom hook](https://www.w3schools.com/react/react_customhooks.asp)
+
+You can make your own Hooks!
+When you have components that can be used by multiple components,
+we can extract that component into a custom Hook.
+Custom Hooks start with "use". Example:```useFetch```
+
+## Build a Hook
+
+## Example Explained
+We have created a new file called ```useFetch.js``` containing a function called
+```useFetch``` which contains all of the logic needed to fetch our data.
+
+We removed the hard-coded URL and replaced it with a ```url``` variable
+that can be passed to the custom Hook.
+Lastly, we are returning our data from our Hook.
+
+In ```main.jsx```, we are importing our ```useFetch``` Hook and 
+utilizing it like any other Hook. This is where we pass in the URL to 
+fetch data from.
+Now we can reuse this custom Hook in any component to fetch data from
+any URL.
