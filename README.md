@@ -1597,3 +1597,20 @@ when clicking Button 2, only Parent and Button 2 should re-render.
 
 ## React useMemo Hook
 [React useMemo Hook](https://www.w3schools.com/react/react_usememo.asp)
+
+The React ```useMemo``` Hook returns a memoized value.
+```Think of memoization as caching a value so that it does not need 
+to be recalculatd.
+```
+The ```useMemo``` Hook only runds when one of its dependencies update.
+This can improve performance.
+
+```
+The useMemo and useCallback``` Hooks are similar:
+useMemo returns a memoized value.
+useCallback returns a memoized function.
+```
+## Without ```useMemo```
+The ```useMemo``` Hook can be used to keep expensive, resource intensive functions
+from needlessly running.
+

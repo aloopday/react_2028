@@ -1,39 +1,53 @@
-//With useCallback:
-import React, { useState, useCallback } from 'react';
-import { createRoot } from 'react-dom/client';
+import {useState} from 'react';
+import {createRoot} from 'react-dom/client';
 
-// Child component that receives a function prop
-const Button = React.memo(({ onClick, text }) => {
-  console.log(`${text} button rendered`);
-  return <button onClick={onClick}>{text}</button>;
-});
+const App =()=>{
+  const [count,setCount] =useState(0);
+  const [todos,setTodos] =useState([]);
+  const calculation=expensiveCalculation(count);
 
-// Parent component with useCallback
-function WithCallbackExample() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
+  const increment = ()=>{
+    setCount((c)=>c +1);
+  };
+  const addTodo =()=>{
+    setTodos((t)=>[...t,"New Todo"]);
 
-  // These functions are memoized and only recreated when dependencies change
-  const handleClick1 = useCallback(() => {
-    setCount1(count1 + 1);
-  }, [count1]);
-
-  const handleClick2 = useCallback(() => {
-    setCount2(count2 + 1);
-  }, [count2]);
-
-  console.log("Parent rendered");
-  return (
+  };
+  return(
     <div>
-      <h2>With useCallback:</h2>
-      <p>Count 1: {count1}</p>
-      <p>Count 2: {count2}</p>
-      <Button onClick={handleClick1} text="Button 1" />
-      <Button onClick={handleClick2} text="Button 2" />
+      <div>
+        <h2>
+          My todos
+        </h2>
+        {todos.map((todo,index)=>{
+          return <p key={index}>{tod}</p>
+        })}
+        <button onClick={addTodo}>Add Todo</button>
+      </div>
+      <hr />
+      <div>
+        Count:{count}
+        <button onClick={increment}>+</button>
+        <h2>Expensive Calculation</h2>
+        {calculation}
+        <p>Note that this example executes the expensiver function also ,
+          When you click on the Add Todo button.
+
+        </p>
+      </div>
     </div>
   );
-}
+};
+
+const expensiveCalculation=(num)=>{
+  console.log("Calculating...");
+  for(let i=0;i<1000000000; i+=){
+    num +=1;
+  }
+  return num;
+};
 
 createRoot(document.getElementById('root')).render(
-  <WithCallbackExample />
-); 
+  <App />
+);
+
